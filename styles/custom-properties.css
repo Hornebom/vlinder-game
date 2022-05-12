@@ -1,0 +1,16 @@
+:root {
+  --target-start-z: -500px;
+  --perspective: 200px;
+
+  --rgb-primary: 255, 255, 255;
+  --rgb-secondary: 0, 0, 0;
+
+  --color-primary: rgb(var(--rgb-primary));
+  --color-secondary: rgb(var(--rgb-secondary));
+  --color-green: rgb(0, 255, 133);
+  --color-purple: rgb(97, 0, 255);
+  --color-red: rgb(255, 0, 61);
+
+  --font-family: 'Space Mono', monospace;
+  --font-size-base: 1.2rem;
+}

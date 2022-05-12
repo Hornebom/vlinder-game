@@ -1,0 +1,30 @@
+.lives {
+  position: relative;
+  flex-grow: 2;
+  max-width: 150px;
+  height: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+}
+
+
+.lives__unit {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+}
+
+[data-lives="0"] .lives__unit,
+[data-lives="1"] .lives__unit:nth-child(2),
+[data-lives="1"] .lives__unit:nth-child(3),
+[data-lives="2"] .lives__unit:nth-child(3) {
+  opacity: .3;
+}
+
+.lives meter {
+  width: 10px;
+  height: 1px;
+  position: absolute;
+  opacity: 0;
+}

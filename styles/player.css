@@ -1,0 +1,51 @@
+.player {
+  --player-size: 5vh;
+  --player-duration: .5s;
+
+  position: absolute;
+  top: calc(50% - var(--player-size) * .5);
+  left: calc(50% - var(--player-size));
+  width: calc(var(--player-size) * 2);
+  height: var(--player-size);
+  
+  transform: rotateX(90deg);
+  transform-style: preserve-3d;
+}
+
+.player:before,
+.player:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: var(--player-size);
+  height: var(--player-size);
+  
+  background-color: linen;
+}
+
+.player:before {
+  left: 0;
+  border-radius: 100% 0% 59% 41% / 54% 34% 66% 46%;
+  transform-origin: 100% 50%;
+}
+
+.player:after {
+  right: 0;
+  border-radius: 0% 100% 41% 59% / 34% 54% 46% 66%;
+  transform-origin: 0 50%;
+}
+
+.is-playing .player:before,
+.is-playing .player:after {
+  animation: flutter var(--player-duration) infinite ease-in-out;
+}
+
+.is-playing .player:after {
+  animation-direction: reverse;
+  animation-delay: calc(var(--player-duration) * -.5);
+}
+
+@keyframes flutter {
+  0%, 100% { transform: rotateY(30deg) }
+  50% { transform: rotateY(-30deg) }
+}

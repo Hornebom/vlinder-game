@@ -1,0 +1,10 @@
+.scores {
+  margin-left: auto;
+  text-align: right;
+}
+
+.scores mark {
+  margin-left: 1rem;
+  background: none;
+  color: var(--color-primary);
+}

@@ -1,0 +1,60 @@
+[data-points='10'] {
+  --target-theme: var(--color-purple);
+}
+
+[data-points='30'] {
+  --target-theme: var(--color-green);
+}
+
+[data-evil] {
+  --target-theme: var(--color-red);
+}
+
+.target {
+  --target-size: 80px;
+
+  position: absolute;
+  top: calc(50% - var(--target-size) * .5);
+  left: calc(50% - var(--target-size) * .5);
+  width: var(--target-size);
+  height: var(--target-size);
+  border-radius: 50%;
+
+  /* defaults needed for animations */
+  opacity: 0;
+  transform: translateZ(var(--target-start-z));
+}
+
+[data-points='10'] {
+  background-image: radial-gradient(transparent 40%, var(--target-theme) 40%);
+}
+
+[data-points='30'] {
+  background-color: var(--target-theme);
+}
+
+.evil:before,
+.evil:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 20%;
+  height: 100%;
+  background-color: var(--target-theme);
+  animation: rotate 2s infinite linear;
+}
+
+.evil:after {
+  animation-delay: -.5s;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+.clone {
+  background-color: var(--target-theme);
+  opacity: 1;
+  transform: translateZ(0) scale(0);
+}

@@ -1,0 +1,13 @@
+@import url('./styles/fonts.css');
+@import url('./styles/custom-properties.css');
+@import url('./styles/base.css');
+@import url('./styles/utils.css');
+@import url('./styles/typography.css');
+@import url('./styles/buttons.css');
+@import url('./styles/layout.css');
+
+@import url('./styles/target.css');
+@import url('./styles/lives.css');
+@import url('./styles/score.css');
+@import url('./styles/player.css');
+@import url('./styles/control.css');

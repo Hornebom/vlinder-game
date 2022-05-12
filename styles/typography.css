@@ -1,0 +1,18 @@
+body {
+  font-family: var(--font-family);
+  color: var(--color-primary);
+  font-size: var(--font-size-base);
+}
+
+.title {
+  font-weight: normal;
+  font-size: clamp(2rem, 10vw, 4rem);
+}
+
+strong {
+  font-weight: normal;
+}
+
+.text-center {
+  text-align: center;
+}

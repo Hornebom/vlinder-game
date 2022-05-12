@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vlinder</title>
+  
+  <meta name="author" content="Hornebom">
+  <meta name="description" content="Vlinder HTML5 game: Catch as many pollen as possible. Be aware of the red ones though. Build with HTML5, CSS and vanilla JavaScript. Collision detection based on Intersection Observer. Enjoy playing and good luck.">
+
+  <meta property="og:image" content="https://developer.mozilla.org/static/img/opengraph-logo.png">
+  <meta property="og:description" content="Vlinder HTML5 game: Catch as many pollen as possible. Be aware of the red ones though. Build with HTML5, CSS and vanilla JavaScript. Collision detection based on Intersection Observer. Enjoy playing and good luck.">
+  <meta property="og:title" content="Vlinder">
+  <meta name="twitter:title" content="Vlinder">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="manifest" href="./assets/site.webmanifest">
+  <link rel="mask-icon" href="./assets/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="./index.css">
+  <link rel="preload" as="font" href="./assets/SpaceMono-Regular.woff2" type="font/woff2" crossorigin="crossorigin">
+  <script src="./index.js" type="module" defer></script>
+</head>
+<body class="app" data-app>
+  <div class="place-items-center" data-intro>
+    <button class="button" type="button" data-play-button>
+      Play
+    </button>
+  </div>
+
+  <div class="game is-hidden" data-game>
+    <div class="stage" data-stage>
+      <div class="target" data-target data-points="10" id="target-1"></div>
+      <div class="target" data-target data-points="30" id="target-2"></div>
+      <div class="target" data-target data-points="10" id="target-3"></div>
+      <div class="target evil" data-target data-evil id="target-4"></div>
+      <div class="target" data-target data-points="30" id="target-5"></div>
+      <div class="target" data-target data-points="10" id="target-6"></div>
+      <div class="target" data-target data-points="30" id="target-7"></div>
+      <div class="target evil" data-target data-evil id="target-8"></div>
+
+      <div class="target clone" data-clone></div>
+      
+      <div class="player" data-player></div>
+      
+      <div class="control" data-control>
+        <div class="control__thumb" data-control-thumb></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="place-items-center is-hidden" data-finish>
+    <div class="text-center">
+      <h2 class="title"><strong>Game over</strong></h2>
+      <button class="button m-top" type="button" data-play-button>
+        Restart
+      </button>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="lives" data-lives>
+      <span class="lives__unit"></span>
+      <span class="lives__unit"></span>
+      <span class="lives__unit"></span>
+      <meter min="0" max="3" value="3" data-meter aria-label="lives"></meter>
+    </div>
+
+    <div class="scores">
+      <mark>HI <span data-high-score>00000</span></mark>
+      <mark data-score>00000</mark>
+    </div>
+  </div>
+</body>
+</html>

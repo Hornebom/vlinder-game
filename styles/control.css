@@ -1,0 +1,31 @@
+.control {
+  --control-position: min(20px, 10vw);
+  --control-size: 150px;
+
+  position: absolute;
+  z-index: 100;
+  right: var(--control-position);
+  bottom: var(--control-position);
+  width: var(--control-size);
+  height: var(--control-size);
+
+  background-color: rgba(var(--rgb-primary), .1);
+  border-radius: 50%;
+}
+
+.game:not(.is-touch) .control {
+  display: none;
+}
+
+.control__thumb {
+  --thumb-size: calc(var(--control-size) * .25);
+
+  position: absolute;
+  top: calc(50% - var(--thumb-size) * .5);
+  left: calc(50% - var(--thumb-size) * .5);
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3px var(--color-primary);
+}

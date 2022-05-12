@@ -1,0 +1,21 @@
+.button {
+  display: inline-block;
+  padding: .4em .7em;
+  
+  appearance: none;
+  border: none;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+  
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-secondary);
+
+  cursor: pointer;
+  box-shadow: 0 0 0 var(--color-primary);
+  transition: box-shadow .1s linear;
+}
+
+.button:hover {
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
