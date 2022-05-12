@@ -1,2 +1,2 @@
-# Issues
-if no mouse event is present, webkit won't fire on intersection, see bug: https://bugzilla.mozilla.org/show_bug.cgi?id=1419339
+# Vlinder
+Vlinder HTML5 game: Catch as many pollen as possible. Be aware of the red ones though. Build with HTML5, CSS and vanilla JavaScript. Collision detection based on Intersection Observer. Enjoy playing and good luck.
