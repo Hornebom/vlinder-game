@@ -1,15 +1,15 @@
 import livesHandler from './scripts/lives.js'
 import scoreHandler from './scripts/score.js'
 import durationHandler from './scripts/duration.js'
-import positionHandler from './scripts/position.js'
 import collisionHandler from './scripts/collision.js'
 import getTargetAnimation from './scripts/getTargetAnimation.js'
 import animateCollision from './scripts/animateCollision.js'
 import stepsHandler from './scripts/steps.js'
 import viewportHelper from './scripts/viewport.js'
 import controlHandler from './scripts/controls.js'
+import setPosition from './scripts/setPosition.js'
 import { getStyles } from './scripts/utils.js'
-import { game, stage, targets, player, playButtons } from './scripts/elements.js'
+import { game, targets, playButtons } from './scripts/elements.js'
 
 let animations = []
 let raf
@@ -18,7 +18,6 @@ const [step, setStep] = stepsHandler(0)
 const [duration, setDuration] = durationHandler({ initialValue: initialDuration, minValue: 700 })
 const [score, setScore] = scoreHandler(0)
 const [lives, setLives] = livesHandler({ defaultValue: 3, callback: stopGame })
-const { setPosition } = positionHandler({ game, player, stage })
 const { collisions, observer } = collisionHandler(game)
 const { addViewportHelper } = viewportHelper()
 
