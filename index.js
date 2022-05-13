@@ -5,7 +5,7 @@ import collisionHandler from './scripts/collision.js'
 import getTargetAnimation from './scripts/getTargetAnimation.js'
 import animateCollision from './scripts/animateCollision.js'
 import stepsHandler from './scripts/steps.js'
-import viewportHelper from './scripts/viewport.js'
+import addViewportHelper from './scripts/viewportHelper.js'
 import controlHandler from './scripts/controls.js'
 import setPosition from './scripts/setPosition.js'
 import { getStyles } from './scripts/utils.js'
@@ -19,7 +19,6 @@ const [duration, setDuration] = durationHandler({ initialValue: initialDuration,
 const [score, setScore] = scoreHandler(0)
 const [lives, setLives] = livesHandler({ defaultValue: 3, callback: stopGame })
 const { collisions, observer } = collisionHandler(game)
-const { addViewportHelper } = viewportHelper()
 
 let controls
 (async function() {
