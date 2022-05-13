@@ -1,7 +1,7 @@
 import livesHandler from './scripts/lives.js'
 import scoreHandler from './scripts/score.js'
 import durationHandler from './scripts/duration.js'
-import collisionHandler from './scripts/collision.js'
+import { observer, collisions } from './scripts/collisions.js'
 import getTargetAnimation from './scripts/getTargetAnimation.js'
 import animateCollision from './scripts/animateCollision.js'
 import stepsHandler from './scripts/steps.js'
@@ -18,7 +18,6 @@ const [step, setStep] = stepsHandler(0)
 const [duration, setDuration] = durationHandler({ initialValue: initialDuration, minValue: 700 })
 const [score, setScore] = scoreHandler(0)
 const [lives, setLives] = livesHandler({ defaultValue: 3, callback: stopGame })
-const { collisions, observer } = collisionHandler(game)
 
 let controls
 (async function() {
