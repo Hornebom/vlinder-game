@@ -1,6 +1,4 @@
-import { initialDuration } from '../index.js'
-
-let _duration = initialDuration
+let _duration = 3000
 
 function setDuration(value) {
   if(value > 700) {

@@ -1,6 +1,6 @@
+import { duration, setDuration } from './scripts/duration.js'
 import { lives, setLives } from './scripts/lives.js'
 import { score, setScore } from './scripts/scores.js'
-import { duration, setDuration } from './scripts/duration.js'
 import { observer, collisions } from './scripts/collisions.js'
 import getTargetAnimation from './scripts/getTargetAnimation.js'
 import animateCollision from './scripts/animateCollision.js'
@@ -13,8 +13,9 @@ import { game, targets, playButtons } from './scripts/elements.js'
 
 let animations = []
 let raf
-export const initialDuration = 3000
+
 const [step, setStep] = stepsHandler(0)
+
 
 let controls
 (async function() {
@@ -65,7 +66,7 @@ function createAnimation(target) {
 function startGame() {
   animations.forEach(animation => animation.cancel())
   animations = []
-  setDuration(initialDuration)
+  setDuration()
   setScore(0)
   setLives(3)
   setStep(2)
