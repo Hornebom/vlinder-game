@@ -2,19 +2,18 @@ import { duration, setDuration } from './scripts/duration.js'
 import { lives, setLives } from './scripts/lives.js'
 import { score, setScore } from './scripts/scores.js'
 import { observer, collisions } from './scripts/collisions.js'
-import getTargetAnimation from './scripts/getTargetAnimation.js'
 import animateCollision from './scripts/animateCollision.js'
 import { step, setStep } from './scripts/steps.js'
 import addViewportHelper from './scripts/viewportHelper.js'
 import getControls from './scripts/controls.js'
 import setPosition from './scripts/setPosition.js'
 import { getStyles } from './scripts/utils.js'
+import { getAnimationById, removeAnimation, addAnimation, cancelAndRemoveAnimations, finishAnimation, getAnimation } from './scripts/animations.js'
 import { game, targets, playButtons } from './scripts/elements.js'
 
-let animations = []
 let raf
-
 let controls
+
 (async function() {
   controls = await getControls(setPosition)
   init()
@@ -26,7 +25,7 @@ function loop() {
       const { x, y, z, theme } = getStyles(target)
   
       if(100 - Math.abs(z) >= 1) {
-        animations.find(({ id }) => id === target.id).finish()
+        finishAnimation(target.id)
 
         if('evil' in target.dataset) {
           setLives(lives() - 1)
@@ -42,33 +41,34 @@ function loop() {
   raf = requestAnimationFrame(loop)
 }
 
-function createAnimation(target) {
-  let animation = animations.find(({ id }) => target.id === id)
+function animateTarget(target) {
+  let animation = getAnimationById(target.id)
   
   if(animation) {
     observer.unobserve(target)
-    animations.splice(animations.indexOf(animation), 1)
-    
+    removeAnimation(animation)
     setDuration(duration() - 20)
   }
 
-  animation = getTargetAnimation({ target, duration: duration() })
-  animation.id = target.id
-  animations.push(animation)
+  animation = getAnimation({ 
+    target, 
+    duration: duration(), 
+    id: target.id, 
+    onFinish:  () => step() < 3 && animateTarget(target)
+  })
+  addAnimation(animation)
 
-  animation.onfinish = () => step() < 3 && createAnimation(target)
   observer.observe(target)
 }
 
 function startGame() {
-  animations.forEach(animation => animation.cancel())
-  animations = []
+  cancelAndRemoveAnimations()
   setDuration()
   setScore(0)
   setLives(3)
   setStep(2)
   
-  targets.forEach(target => createAnimation(target))
+  targets.forEach(target => animateTarget(target))
   controls.addControls()
   raf = requestAnimationFrame(loop)
 }
