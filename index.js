@@ -1,5 +1,5 @@
 import { lives, setLives } from './scripts/lives.js'
-import scoreHandler from './scripts/score.js'
+import { score, setScore } from './scripts/scores.js'
 import durationHandler from './scripts/duration.js'
 import { observer, collisions } from './scripts/collisions.js'
 import getTargetAnimation from './scripts/getTargetAnimation.js'
@@ -16,7 +16,6 @@ let raf
 const initialDuration = 3000
 const [step, setStep] = stepsHandler(0)
 const [duration, setDuration] = durationHandler({ initialValue: initialDuration, minValue: 700 })
-const [score, setScore] = scoreHandler(0)
 
 let controls
 (async function() {

@@ -11,5 +11,7 @@ const control = document.querySelector('[data-control]')
 const controlThumb = document.querySelector('[data-control-thumb]')
 const livesElement = document.querySelector('[data-lives]')
 const meterElement = document.querySelector('[data-meter]')
+const scoreElement = document.querySelector('[data-score]')
+const hightScoreElement = document.querySelector('[data-high-score]')
 
-export { app, intro, game, stage, targets, player, clone, finish, playButtons, control, controlThumb, livesElement, meterElement }
+export { app, intro, game, stage, targets, player, clone, finish, playButtons, control, controlThumb, livesElement, meterElement, scoreElement, hightScoreElement }
