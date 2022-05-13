@@ -9,5 +9,7 @@ const finish = document.querySelector('[data-finish]')
 const playButtons = document.querySelectorAll('[data-play-button]')
 const control = document.querySelector('[data-control]')
 const controlThumb = document.querySelector('[data-control-thumb]')
+const livesElement = document.querySelector('[data-lives]')
+const meterElement = document.querySelector('[data-meter]')
 
-export { app, intro, game, stage, targets, player, clone, finish, playButtons, control, controlThumb }
+export { app, intro, game, stage, targets, player, clone, finish, playButtons, control, controlThumb, livesElement, meterElement }

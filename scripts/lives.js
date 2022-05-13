@@ -1,25 +1,21 @@
-const livesElement = document.querySelector('[data-lives]')
-const meterElement = document.querySelector('[data-meter]')
+import { livesElement, meterElement } from './elements.js'
+import { stopGame } from '../index.js'
  
-function livesHandler({ initialValue, callback }) {
-  let _lives = initialValue
+let _lives = 3
 
-  function setLives(value) {
-    _lives = value
+function setLives(value) {
+  _lives = value
 
-    livesElement.setAttribute('data-lives', _lives)
-    meterElement.value = _lives
+  livesElement.setAttribute('data-lives', _lives)
+  meterElement.value = _lives
 
-    if(_lives < 1) {
-      callback()
-    }
+  if(_lives < 1) {
+    stopGame()
   }
-
-  function lives() {
-    return _lives
-  }
-
-  return [lives, setLives]
 }
 
-export default livesHandler
+function lives() {
+  return _lives
+}
+
+export { lives, setLives}

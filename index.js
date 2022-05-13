@@ -1,4 +1,4 @@
-import livesHandler from './scripts/lives.js'
+import { lives, setLives } from './scripts/lives.js'
 import scoreHandler from './scripts/score.js'
 import durationHandler from './scripts/duration.js'
 import { observer, collisions } from './scripts/collisions.js'
@@ -17,7 +17,6 @@ const initialDuration = 3000
 const [step, setStep] = stepsHandler(0)
 const [duration, setDuration] = durationHandler({ initialValue: initialDuration, minValue: 700 })
 const [score, setScore] = scoreHandler(0)
-const [lives, setLives] = livesHandler({ initialValue: 3, callback: stopGame })
 
 let controls
 (async function() {
@@ -78,7 +77,7 @@ function startGame() {
   raf = requestAnimationFrame(loop)
 }
 
-function stopGame() {
+export function stopGame() {
   targets.forEach(target => observer.unobserve(target))
   cancelAnimationFrame(raf)
   controls.removeControls()
