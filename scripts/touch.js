@@ -1,6 +1,7 @@
 import { control, controlThumb } from './elements.js'
+import setPosition from './setPosition.js'
 
-function touchHandler(onUpdate = () => {}) {
+function touchHandler() {
   const center = { x: 0, y: 0 }
   let top, left, width, height, threshold, distance, x, y
 
@@ -42,7 +43,7 @@ function touchHandler(onUpdate = () => {}) {
     }
 
     moveThumb(x, y)
-    onUpdate({ 
+    setPosition({ 
       x: -x / width * (innerWidth * 1), 
       y: -y / height * (innerHeight * 1),
       perspectiveOrigin: '50% 50%'

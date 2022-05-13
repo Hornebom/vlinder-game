@@ -6,7 +6,6 @@ import animateCollision from './scripts/animateCollision.js'
 import { step, setStep } from './scripts/steps.js'
 import addViewportHelper from './scripts/viewportHelper.js'
 import getControls from './scripts/controls.js'
-import setPosition from './scripts/setPosition.js'
 import { getStyles } from './scripts/utils.js'
 import { getAnimationById, removeAnimation, addAnimation, cancelAndRemoveAnimations, finishAnimation, getAnimation } from './scripts/animations.js'
 import { game, targets, playButtons } from './scripts/elements.js'
@@ -15,7 +14,7 @@ let raf
 let controls
 
 (async function() {
-  controls = await getControls(setPosition)
+  controls = await getControls()
   init()
 })()
 
