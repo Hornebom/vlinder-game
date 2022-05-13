@@ -3,14 +3,14 @@ function zeroPad(num, places) {
   return new Array(+(zero > 0 && zero)).join('0') + num
 }
 
-const debounce = (callback, wait) => {
-  let timeoutId = null;
+function debounce(callback, wait) {
+  let timeoutId = null
   return (...args) => {
-    window.clearTimeout(timeoutId);
+    window.clearTimeout(timeoutId)
     timeoutId = window.setTimeout(() => {
-      callback.apply(null, args);
-    }, wait);
-  };
+      callback.apply(null, args)
+    }, wait)
+  }
 }
 
 function getStyles(element) {

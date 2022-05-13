@@ -16,7 +16,7 @@ let raf
 
 let controls
 (async function() {
-  controls = await controlHandler(setPosition)
+  controls = await getControls(setPosition)
   init()
 })()
 
