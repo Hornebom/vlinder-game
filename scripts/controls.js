@@ -1,4 +1,4 @@
-async function controlHandler(callback) {
+async function getControls(callback) {
   let addControls, removeControls
   const isTouch = 'ontouchstart' in window
   const moduleName = isTouch ? 'touch' : 'pointer'
@@ -13,4 +13,4 @@ async function controlHandler(callback) {
   return { isTouch, addControls, removeControls }
 }
 
-export default controlHandler
+export default getControls
