@@ -1,17 +1,15 @@
-function durationHandler({ initialValue, minValue }) {
-  let _duration = initialValue
+import { initialDuration } from '../index.js'
 
-  function setDuration(value) {
-    if(value > minValue) {
-      _duration = value
-    }
+let _duration = initialDuration
+
+function setDuration(value) {
+  if(value > 700) {
+    _duration = value
   }
-
-  function duration() {
-    return _duration
-  }
-
-  return [duration, setDuration]
 }
 
-export default durationHandler
+function duration() {
+  return _duration
+}
+
+export { duration, setDuration }
