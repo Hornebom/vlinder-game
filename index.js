@@ -4,7 +4,7 @@ import { score, setScore } from './scripts/scores.js'
 import { observer, collisions } from './scripts/collisions.js'
 import getTargetAnimation from './scripts/getTargetAnimation.js'
 import animateCollision from './scripts/animateCollision.js'
-import stepsHandler from './scripts/steps.js'
+import { step, setStep } from './scripts/steps.js'
 import addViewportHelper from './scripts/viewportHelper.js'
 import controlHandler from './scripts/controls.js'
 import setPosition from './scripts/setPosition.js'
@@ -13,9 +13,6 @@ import { game, targets, playButtons } from './scripts/elements.js'
 
 let animations = []
 let raf
-
-const [step, setStep] = stepsHandler(0)
-
 
 let controls
 (async function() {
