@@ -1,7 +1,8 @@
 import { livesElement, meterElement } from './elements.js'
 import { stopGame } from '../index.js'
  
-let _lives = 3
+const initialLives = 3
+let _lives = initialLives
 
 function setLives(value) {
   _lives = value
@@ -14,8 +15,12 @@ function setLives(value) {
   }
 }
 
+function resetLives() {
+  setLives(initialLives)
+}
+
 function lives() {
   return _lives
 }
 
-export { lives, setLives}
+export { lives, setLives, resetLives }

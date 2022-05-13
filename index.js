@@ -1,6 +1,6 @@
-import { duration, setDuration } from './scripts/duration.js'
-import { lives, setLives } from './scripts/lives.js'
-import { score, setScore } from './scripts/scores.js'
+import { duration, setDuration, resetDuration } from './scripts/duration.js'
+import { lives, setLives, resetLives } from './scripts/lives.js'
+import { score, setScore, resetScore } from './scripts/scores.js'
 import { observer, collisions } from './scripts/collisions.js'
 import animateCollision from './scripts/animateCollision.js'
 import { step, setStep } from './scripts/steps.js'
@@ -62,9 +62,9 @@ function animateTarget(target) {
 
 function startGame() {
   cancelAndRemoveAnimations()
-  setDuration()
-  setScore(0)
-  setLives(3)
+  resetDuration()
+  resetScore()
+  resetLives()
   setStep(2)
   
   targets.forEach(target => animateTarget(target))

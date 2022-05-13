@@ -2,7 +2,8 @@ import { zeroPad } from './utils.js'
 import { scoreElement, hightScoreElement } from './elements.js'
 
 const STORAGE_KEY = 'high-score'
-let _score = 0
+const initialScore = 0
+let _score = initialScore
 let highScore = parseInt(localStorage.getItem(STORAGE_KEY)) // => NaN
 
 if(isNaN(highScore)) {
@@ -25,8 +26,12 @@ function setHighScore(value) {
   hightScoreElement.textContent = zeroPad(value, 5)
 }
 
+function resetScore() {
+  setScore(initialScore)
+}
+
 function score() {
   return _score
 }
 
-export { score, setScore }
+export { score, setScore, resetScore }
