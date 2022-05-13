@@ -1,8 +1,8 @@
 const livesElement = document.querySelector('[data-lives]')
 const meterElement = document.querySelector('[data-meter]')
  
-function livesHandler({ defaultValue, callback }) {
-  let _lives = defaultValue
+function livesHandler({ initialValue, callback }) {
+  let _lives = initialValue
 
   function setLives(value) {
     _lives = value

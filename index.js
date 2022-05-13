@@ -17,7 +17,7 @@ const initialDuration = 3000
 const [step, setStep] = stepsHandler(0)
 const [duration, setDuration] = durationHandler({ initialValue: initialDuration, minValue: 700 })
 const [score, setScore] = scoreHandler(0)
-const [lives, setLives] = livesHandler({ defaultValue: 3, callback: stopGame })
+const [lives, setLives] = livesHandler({ initialValue: 3, callback: stopGame })
 
 let controls
 (async function() {
