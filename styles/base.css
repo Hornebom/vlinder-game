@@ -14,4 +14,5 @@ body {
 body {
   position: fixed;
   max-height: var(--vh);
+  overflow: hidden;
 }
